@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Retail Inventory Management API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "health": "node -e \"fetch('http://localhost:5000/api/health').then(async response => { console.log(response.status, await response.text()); process.exit(response.ok ? 0 : 1); }).catch(error => { console.error(error.message); process.exit(1); })\"",
+    "seed:sample": "node seedSampleData.js"
+  },
+  "keywords": ["inventory", "retail", "express", "mysql"],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3"
+  }
+}
